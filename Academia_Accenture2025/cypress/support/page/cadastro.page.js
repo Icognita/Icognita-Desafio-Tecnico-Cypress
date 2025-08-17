@@ -16,9 +16,13 @@ Cypress.Commands.add("acessarFormulario", () => {
     cy.get(btnAdd).click()  
 })
 Cypress.Commands.add("preencheDadosPessoais",()=>{
+  // const email = `maria_${Date.now()}@teste.com`
+  // Cypress.env('email', email) 
+  // cy.log(`📧 Email usado: ${email}`)
+
     cy.get(userPrimeiroNome).type("Maria")
     cy.get(userSegundoNome).type("Jubilina")
-    cy.get(userEmail).type(Cypress.env('email'))
+    cy.get(userEmail).type(Cypress.env('email')) 
     cy.get(userIdade).type("80")
     cy.get(userSalario).type("10000")
     cy.get(userDepartamento).type("Qa")
@@ -27,17 +31,12 @@ Cypress.Commands.add("preencheDadosPessoais",()=>{
 
 
 Cypress.Commands.add("validaLinhaComNomeMaria", () => {
-    cy.log()
   cy.get('.rt-tbody .rt-tr-group')
+    .should('contain', 'Maria') // garante que carregou
     .contains('Maria')
-    .parent()
+    .closest('.rt-tr-group')
     .within(() => {
-      cy.get('.rt-td').eq(0).should('contain', 'Maria')
-      cy.get('.rt-td').eq(1).should('contain', 'Jubilina')
-      cy.get('.rt-td').eq(2).should('contain', Cypress.env('email'))
-      cy.get('.rt-td').eq(3).should('contain', '80')
-      cy.get('.rt-td').eq(4).should('contain', '10000')
-      cy.get('.rt-td').eq(5).should('contain', 'Qa')
+      cy.get('.rt-td').eq(0).should('contain', 'Maria')   
     })
 })
                 

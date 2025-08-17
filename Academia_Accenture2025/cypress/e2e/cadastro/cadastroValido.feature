@@ -10,5 +10,5 @@ Funcionalidade: Automação de Cenário de Cadastro
     Dado que o usuário acesse o portal webtables
     Quando ele clica no botao add e acessa o formulário de cadastro
     E preenche todos os campos obrigatórios com dados válidos e clica no botão submit
-    Então Então os dados devem aparecer na última linha da tabela
+    Então  os dados devem aparecer na última linha da tabela
   

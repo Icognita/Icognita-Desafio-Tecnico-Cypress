@@ -17,6 +17,6 @@ And('preenche todos os campos obrigatórios com dados válidos e clica no botão
 })
 
 
-Then('Então os dados devem aparecer na última linha da tabela',()=>{
+Then('os dados devem aparecer na última linha da tabela',()=>{
     cy.validaLinhaComNomeMaria()
 })
