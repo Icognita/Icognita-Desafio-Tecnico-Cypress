@@ -16,6 +16,7 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 import './page/cadastro.page'
+import './formCommands';
 
 
 
@@ -23,3 +24,8 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     console.log('Uncaught exception:', err.message)
     return false
 })
+
+// Cypress.on('uncaught:exception', (err, runnable) => {
+//   // Ignora erros de scripts de terceiros
+//   return false;
+// });

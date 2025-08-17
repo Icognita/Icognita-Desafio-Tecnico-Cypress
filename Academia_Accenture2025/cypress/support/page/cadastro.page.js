@@ -1,3 +1,6 @@
+
+
+
 const btnAdd           ="#addNewRecordButton"
 const userPrimeiroNome ="#firstName"
 const userSegundoNome  ="#lastName"
@@ -58,3 +61,25 @@ Cypress.Commands.add("excluirRegistro", () => {
 Cypress.Commands.add("validarExclusaoRegistro3", () => {
   cy.get('.rt-tr-group').should('not.contain', 'mirian@teste.com')
 })
+
+
+//validação email
+Cypress.Commands.add("preencheDadosPessoaisEmailInvalidos",()=>{
+    cy.get(userPrimeiroNome).type("Maria")
+    cy.get(userSegundoNome).type("Jubilina")
+    cy.get(userEmail).type(Cypress.env('emailInvalido')) 
+    cy.get(userIdade).type("80")
+    cy.get(userSalario).type("10000")
+    cy.get(userDepartamento).type("Qa")
+    cy.get(btnSubmit).click()
+})
+
+
+Cypress.Commands.add("campoEmailInvalidos", () => {
+  cy.get('#userEmail')
+  .invoke('css', 'border-bottom-color')
+  .should('eq', 'rgb(220, 53, 69)')
+})
+
+
+

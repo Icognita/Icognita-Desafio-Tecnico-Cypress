@@ -37,4 +37,17 @@ Then("o usuário clica no botão  editar e faz alteração o nome do usuário",(
  Then('o registro não deve mais aparecer na tabela',()=>{
      cy.validarExclusaoRegistro3()
  })
+//email campo invalido
+
+ And('preenche todos os campos obrigatórios com e-mail inválido e clica no botão "Submit"',()=>{
+    cy.preencheDadosPessoaisEmailInvalidos()
+ })
+
+ Then('o campo de e-mail deve exibir uma borda vermelha indicando erro',()=>{
+    cy.campoEmailInvalidos()
+ })
+ 
+//  And('preenche todos os campos obrigatórios com dados inválidos e clica no botão "Submit"',()=>{
+
+//  })
 

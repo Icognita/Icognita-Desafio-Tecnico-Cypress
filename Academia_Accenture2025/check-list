@@ -8,7 +8,7 @@
 
 [✔ ] Criar teste para excluir cadastro
 
-[ ] Criar cenários negativos (ex: campos inválidos, usuário já existente)
+[ ] Criar cenários negativos ( campos inválidos, usuário já existente,)
 
-[ ] Criar cenário positivo (cadastro bem-sucedido)
+[ ] Criar cenário positivo (cadastro bem-sucedido )
 
