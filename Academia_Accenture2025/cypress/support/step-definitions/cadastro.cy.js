@@ -39,7 +39,7 @@ Then("o usuário clica no botão  editar e faz alteração o nome do usuário",(
  })
 //email campo invalido
 
- And('o usuário preenche todos os campos obrigatórios, mas insere letras nos campos "Idade" e "Salário", e clica no botão "Submit"',()=>{
+ And('preenche todos os campos obrigatórios com e-mail inválido e clica no botão "Submit"',()=>{
     cy.preencheDadosPessoaisEmailInvalidos()
  })
 
