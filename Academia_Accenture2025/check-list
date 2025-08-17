@@ -1,0 +1,14 @@
+✅ Checklist de Testes – Cadastro de Usuário
+
+[✔] Criar teste para cadastro de usuário
+
+[✔] Validar campos obrigatórios no cadastro
+
+[✔] Criar teste para editar cadastro
+
+[✔ ] Criar teste para excluir cadastro
+
+[ ] Criar cenários negativos (ex: campos inválidos, usuário já existente)
+
+[ ] Criar cenário positivo (cadastro bem-sucedido)
+

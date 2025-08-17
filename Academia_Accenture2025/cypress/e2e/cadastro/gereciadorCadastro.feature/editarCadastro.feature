@@ -4,6 +4,3 @@
     E clicar no botão Submit
     Então os dados devem aparecer corretamente na tabela
     Quando eu edito o cadastro
-    E eu valido a alteração
-    Quando eu excluo o cadastro
-    Então a remoção deve ser validada

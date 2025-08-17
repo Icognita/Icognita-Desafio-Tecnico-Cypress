@@ -16,10 +16,7 @@ Cypress.Commands.add("acessarFormulario", () => {
     cy.get(btnAdd).click()  
 })
 Cypress.Commands.add("preencheDadosPessoais",()=>{
-  // const email = `maria_${Date.now()}@teste.com`
-  // Cypress.env('email', email) 
-  // cy.log(`📧 Email usado: ${email}`)
-
+  
     cy.get(userPrimeiroNome).type("Maria")
     cy.get(userSegundoNome).type("Jubilina")
     cy.get(userEmail).type(Cypress.env('email')) 
@@ -29,15 +26,35 @@ Cypress.Commands.add("preencheDadosPessoais",()=>{
     cy.get(btnSubmit).click()
 })
 
-
 Cypress.Commands.add("validaLinhaComNomeMaria", () => {
-  cy.get('.rt-tbody .rt-tr-group')
-    .should('contain', 'Maria') // garante que carregou
+  cy.get('.rt-tbody .rt-tr-group',{timeout: 10000})
+    .should('contain', 'Maria') 
     .contains('Maria')
     .closest('.rt-tr-group')
     .within(() => {
       cy.get('.rt-td').eq(0).should('contain', 'Maria')   
     })
 })
-                
+
+Cypress.Commands.add("editarRegistro", () => {
+  cy.get('#edit-record-3').click()
+  cy.get('#firstName').clear().type('vitória')
+  cy.get('#submit').click()
+})
+           
+Cypress.Commands.add("validarAposAlteracao", () => {
+  cy.get('.rt-tbody .rt-tr-group',{timeout: 10000})
+    .should('contain', 'vitória') 
+    .contains('vitória')
+    .closest('.rt-tr-group')
+    .within(() => {
+      cy.get('.rt-td').eq(0).should('contain', 'vitória')   
+    })
+})
    
+Cypress.Commands.add("excluirRegistro", () => {
+  cy.get('#delete-record-3').click()
+})
+Cypress.Commands.add("validarExclusaoRegistro3", () => {
+  cy.get('.rt-tr-group').should('not.contain', 'mirian@teste.com')
+})

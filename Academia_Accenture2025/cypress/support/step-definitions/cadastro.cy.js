@@ -20,3 +20,21 @@ And('preenche todos os campos obrigatórios com dados válidos e clica no botão
 Then('os dados devem aparecer na última linha da tabela',()=>{
     cy.validaLinhaComNomeMaria()
 })
+
+//Editar cadastro
+Then("o usuário clica no botão  editar e faz alteração o nome do usuário",()=>{
+    cy.editarRegistro()
+} )
+
+ And('os  dados alterados  deve aparecer na tabela',()=>{
+    cy.validarAposAlteracao()
+ })
+
+ When('o usuário clica no botão excluir  registro',()=>{
+    cy.excluirRegistro()
+ })
+
+ Then('o registro não deve mais aparecer na tabela',()=>{
+     cy.validarExclusaoRegistro3()
+ })
+
