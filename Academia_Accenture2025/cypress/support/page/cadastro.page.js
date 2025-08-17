@@ -67,7 +67,7 @@ Cypress.Commands.add("validarExclusaoRegistro3", () => {
 Cypress.Commands.add("preencheDadosPessoaisEmailInvalidos",()=>{
     cy.get(userPrimeiroNome).type("Maria")
     cy.get(userSegundoNome).type("Jubilina")
-    cy.get(userEmail).type(Cypress.env('emailInvalido')) 
+    cy.get(userEmail).type(Cypress.env('email')) 
     cy.get(userIdade).type("80")
     cy.get(userSalario).type("10000")
     cy.get(userDepartamento).type("Qa")
@@ -80,6 +80,33 @@ Cypress.Commands.add("campoEmailInvalidos", () => {
   .invoke('css', 'border-bottom-color')
   .should('eq', 'rgb(220, 53, 69)')
 })
+
+
+// "validar todos os campos  "vazio"
+
+
+ 
+
+
+Cypress.Commands.add("deixarCamposVazio", () => {
+  cy.get('#submit').click();
+});
+
+Cypress.Commands.add("validarCadastroVazio", () => {
+  const campos = [
+    '#firstName',
+    '#lastName',
+    '#userEmail',
+    '#age',
+    '#salary',
+    '#department'
+  ]
+
+  campos.forEach((seletor) => {
+    cy.get(seletor).should('have.css', 'border-color', 'rgb(220, 53, 69)');
+  });
+});
+
 
 
 

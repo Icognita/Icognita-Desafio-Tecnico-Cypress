@@ -39,7 +39,7 @@ Then("o usuário clica no botão  editar e faz alteração o nome do usuário",(
  })
 //email campo invalido
 
- And('preenche todos os campos obrigatórios com e-mail inválido e clica no botão "Submit"',()=>{
+ And('o usuário preenche todos os campos obrigatórios, mas insere letras nos campos "Idade" e "Salário", e clica no botão "Submit"',()=>{
     cy.preencheDadosPessoaisEmailInvalidos()
  })
 
@@ -47,7 +47,10 @@ Then("o usuário clica no botão  editar e faz alteração o nome do usuário",(
     cy.campoEmailInvalidos()
  })
  
-//  And('preenche todos os campos obrigatórios com dados inválidos e clica no botão "Submit"',()=>{
+And('o usuário deixe todos os campos obrigatórios vazios e clica no botão "Submit"',()=> {
+  cy.deixarCamposVazio()
+});
 
-//  })
-
+Then('os campos devem ser exibidos com bordas vermelhas indicando erro',()=> {
+  cy.validarCadastroVazio()
+});
